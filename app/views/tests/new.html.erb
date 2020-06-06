@@ -1,0 +1,22 @@
+<%= form_for (@test) do |f|%>
+  <div>
+    <%= f.label :name%>
+    <%= f.text_field :name%>
+  </div><br>
+
+   <% obj = @test.questions.build  %>
+    <div>
+     <%= f.fields_for :question, obj do |a| %>
+      <%= a.label "question_1"%>
+      <%=a.text_field "question" %>
+     <% end %>
+     <br>
+    </div>
+  
+
+  <br>
+  
+    <%= f.submit %>
+  </div>
+	
+<% end %>
